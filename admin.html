@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin | ArtSyyCart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Arial', sans-serif; }
+    h1 { font-family: 'Orbitron', sans-serif; }
+    textarea { font-family: monospace; }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen p-8">
+
+  <h1 class="text-4xl font-bold mb-6 text-pink-500">🛠 Admin Panel - Add Art</h1>
+
+  <!-- Art Upload Form -->
+  <div class="bg-gray-900 p-6 rounded shadow-lg max-w-xl mx-auto">
+    <form id="artForm" class="space-y-4">
+      <input type="text" placeholder="Image Filename (in /images)" id="image" required class="w-full p-2 bg-gray-800 border border-pink-500 rounded"/>
+      <input type="text" placeholder="Art Title" id="title" required class="w-full p-2 bg-gray-800 border border-pink-500 rounded"/>
+      <textarea placeholder="Description" id="description" rows="3" required class="w-full p-2 bg-gray-800 border border-pink-500 rounded"></textarea>
+      <button type="submit" class="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded text-black font-bold">Generate JSON</button>
+    </form>
+  </div>
+
+  <!-- Output JSON -->
+  <div class="mt-8 max-w-xl mx-auto">
+    <h2 class="text-xl font-bold mb-2 text-pink-400">Generated JSON</h2>
+    <textarea id="output" rows="6" class="w-full bg-gray-800 text-green-400 p-4 border border-pink-500 rounded" readonly></textarea>
+    <button onclick="copyJSON()" class="mt-2 bg-green-500 hover:bg-green-600 px-4 py-1 text-black rounded">📋 Copy JSON</button>
+  </div>
+
+  <script>
+    const form = document.getElementById("artForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const image = document.getElementById("image").value.trim();
+      const title = document.getElementById("title").value.trim();
+      const description = document.getElementById("description").value.trim();
+
+      const json = {
+        image: "images/" + image,
+        title: title,
+        description: description
+      };
+
+      output.value = JSON.stringify(json, null, 2) + ",";
+    });
+
+    function copyJSON() {
+      output.select();
+      document.execCommand("copy");
+      alert("✅ JSON copied!");
+    }
+  </script>
+
+</body>
+</html>

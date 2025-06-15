@@ -1,0 +1,228 @@
+[
+  {
+    "title": "Sunset Beauty",
+    "image": "images/ART1.jpeg",
+    "description": "A calm sunset view.",
+    "category": "POPART"
+  },
+  {
+    "title": "Dream Forest",
+    "image": "images/ART2.jpeg",
+    "description": "Mystical forest in purple hues.",
+    "category": "POPART"
+  },
+  {
+    "title": "Cosmic Vision",
+    "image": "images/ART3.jpeg",
+    "description": "Space meets surreal art.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Ocean Depths",
+    "image": "images/ART4.jpeg",
+    "description": "Underwater world in vibrant colors.",
+    "category": "QUILLING ART"
+  },
+  {
+    "title": "Urban Jungle",
+    "image": "images/ART5.jpeg",
+    "description": "City life meets nature.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Whimsical Dreams",
+    "image": "images/ART6.jpeg",
+    "description": "A playful take on dreams.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Abstract Harmony",
+    "image": "images/ART7.jpeg",
+    "description": "Colors and shapes in perfect balance.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Ethereal Light",
+    "image": "images/ART8.jpeg",
+    "description": "Light and shadow dance together.",
+    "category": "POPART"
+  },
+  {
+    "title": "Vintage Vibes",
+    "image": "images/ART9.jpeg",
+    "description": "A nostalgic look at the past.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Nature's Palette",
+    "image": "images/ART10.jpeg",
+    "description": "Colors of nature in a beautiful blend.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Celestial Bodies",
+    "image": "images/ART11.jpeg",
+    "description": "Planets and stars in a cosmic dance.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Geometric Dreams",
+    "image": "images/ART14.jpeg",
+    "description": "Shapes and patterns in a dreamlike state.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Serene Waters",
+    "image": "images/ART15.jpeg",
+    "description": "Calm waters reflecting the sky.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Fantasy World",
+    "image": "images/ART16.jpeg",
+    "description": "A world of imagination and fantasy.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Timeless Beauty",
+    "image": "images/ART18.jpeg",
+    "description": "Beauty that transcends time.",
+    "category": "Creative Art"
+  },
+  {
+    "title": "Rhythmic Patterns",
+    "image": "images/ART19.jpeg",
+    "description": "Patterns that create a rhythm.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Whirlwind of Colors",
+    "image": "images/ART20.jpeg",
+    "description": "A vibrant explosion of colors.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Harmony in Chaos",
+    "image": "images/ART21.jpeg",
+    "description": "Finding peace in chaos.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Celestial Dreams",
+    "image": "images/ART22.jpeg",
+    "description": "Dreams inspired by the cosmos.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Urban Reflections",
+    "image": "images/ART23.jpeg",
+    "description": "City reflections in a puddle.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Nature's Embrace",
+    "image": "images/ART24.jpeg",
+    "description": "Nature embracing the urban landscape.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Abstract Emotions",
+    "image": "images/ART25.jpeg",
+    "description": "Emotions expressed through abstract art.",
+    "category": "RESIN ART"
+  },
+  {
+    "title": "Journey Through Time",
+    "image": "images/ART26.jpeg",
+    "description": "A visual journey through different eras.",
+    "category": "POPART"
+  },
+  {
+    "title": "Whimsical Landscapes",
+    "image": "images/ART27.jpeg",
+    "description": "Landscapes that tell a story.",
+    "category": "SKETICHING"
+  },
+  {
+    "title": "Colorful Dreams",
+    "image": "images/ART28.jpeg",
+    "description": "A dreamlike world filled with colors.",
+    "category": "POPART"
+  },
+  {
+    "title": "Mystical Creatures",
+    "image": "images/ART29.jpeg",
+    "description": "Creatures from a fantasy world.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Ethereal Landscapes",
+    "image": "images/ART30.jpeg",
+    "description": "Landscapes that feel otherworldly.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Cultural Fusion",
+    "image": "images/ART31.jpeg",
+    "description": "A blend of different cultures.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Timeless Landscapes",
+    "image": "images/ART32.jpeg",
+    "description": "Landscapes that stand the test of time.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Rhythmic Nature",
+    "image": "images/ART33.jpeg",
+    "description": "Nature's rhythm captured in art.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Celestial Reflections",
+    "image": "images/ART34.jpeg",
+    "description": "Reflections of the cosmos.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Urban Symphony",
+    "image": "images/ART35.jpeg",
+    "description": "A symphony of urban life.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Nature's Symphony",
+    "image": "images/ART36.jpeg",
+    "description": "Nature's beauty in harmony.",
+    "category": "CERTIFICATE"
+  },
+  {
+    "title": "Abstract Reflections",
+    "image": "images/ART37.jpeg",
+    "description": "Reflections of abstract art.",
+    "category": "ARTIST"
+  },
+  {
+    "title": "Journey Through Colors",
+    "image": "images/ART38.jpeg",
+    "description": "A journey through a colorful world.",
+    "category": "ARTIST",
+    "category":"SKETICHING"
+  },
+  {
+    "title": "Whimsical Patterns",
+    "image": "images/ART39.jpeg",
+    "description": "Patterns that tell a whimsical story.",
+    "category": "SKETICHING"
+
+  },
+  {
+    "title": "Colorful Reflections",
+    "image": "images/ART40.jpeg",
+    "description": "Reflections of vibrant colors.",
+    "category": "ARTIST",
+    "category":"SKETICHING"
+  }
+
+]

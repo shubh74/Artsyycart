@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Pacifico&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>ArtsyyCart</title>
+  <meta name="description" content="Artsyycart - Explore the world of art with Sneha Gajera. Gallery, bio, and contact for custom artworks.">
+  <meta name="keywords" content="art, gallery, Sneha Gajera, Artsyycart, artist, paintings, custom art">
+  <meta name="author" content="Sneha Gajera">
+  <meta property="og:title" content="Artsyycart - Sneha Gajera Art Gallery">
+  <meta property="og:description" content="Explore the world of art with Sneha Gajera. Gallery, bio, and contact for custom artworks.">
+  <meta property="og:image" content="images/ART39.jpeg">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+  <meta name="theme-color" content="#b16cea" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav__container">
+        <a href="#" class="nav__logo">
+          <img src="logo.png" alt="Artsyycart Logo" />
+          <span class="logo-text">Artsyycart</span>
+        </a>
+        <button class="nav__menu__btn" id="menu-btn" aria-label="Open menu">
+          <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#service">Gallery</a></li>
+          <li><a href="#menu">BIO</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="btn nav-dark-btn" id="darkModeToggle" title="Toggle dark mode">
+              <i class="ri-moon-line"></i>
+              <span class="dark-btn-text">Dark Mode</span>
+            </button>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/shubh_2006__" target="_blank">
+              <button class="btn nav-dev-btn">
+                <i class="ri-login-box-line"></i>
+                <span>Developer</span>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="section__container header__container" id="home" data-aos="fade-up">
+      <div class="header__image-wrap">
+        <img src="header.jpeg" alt="header" class="header__image" />
+      </div>
+      <div class="header__content">
+        <h1>
+          <span class="header-role">ARTIST</span><br>
+          <span class="header-name">Sneha Gajera</span>
+        </h1>
+        <p class="section__description">
+          From teaching art classes to creating captivating masterpieces, Sneha Gajera brings imagination to life—one brushstroke at a time. Discover her creative journey and let her art inspire your own.
+        </p>
+        <div class="header__btns">
+          <button class="btn">Get Started</button>
+          <a href="https://www.instagram.com/reel/C_RATCfPfep/?igsh=MXY4cWtjcHMxdW9o" target="_blank">
+            <span><i class="ri-play-fill"></i></span>
+            Watch Video
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section__container service__container" id="service">
+    <hr>
+    <div id="galleryFilters" style="text-align:center; margin-bottom:2rem;"></div>
+    <div class="main" id="galleryContainer">
+      <!-- Gallery items will be inserted here by JavaScript -->
+    </div>
+    <div class="clearfix"></div>
+  </section>
+
+  <section class="section__container client__container" id="menu" data-aos="fade-up">
+    <div class="BIO__image">
+      <img src="profile.jpeg" alt="client" />
+    </div>
+    <div class="client__content">
+      <p class="section__subheader">ARTIST</p>
+      <h2 class="section__header">SNEHA GAJERA</h2>
+      <p class="section__description">
+        Sneha Gajera is a passionate artist and art educator, known for her vibrant imagination and dedication to creative growth. Having conducted multiple drawing classes for aspiring artists, she loves to share her knowledge and inspire others. Her works blend technique with emotion, transforming blank canvases into stories that resonate with all ages. Dive into her world of color, creativity, and endless possibilities.
+      </p>
+      <div class="client__details">
+        <div>
+          <h4>Shubh Mehta</h4>
+          <h5>Developer</h5>
+        </div>
+      </div>
+      <div class="client__rating">
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-line"></i></span>
+        <span>4.8</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="download__container" id="contact" data-aos="fade-up">
+    <div class="section__container download__flex" data-aos="fade-up">
+      <div class="download__image">
+        <img src="artist.jpeg" alt="download" />
+      </div>
+      <div class="download__content">
+        <p class="section__subheader">CONTACT US</p>
+        <h2 class="section__header">Reach Out to Sneha Gajera</h2>
+        <p class="section__description">
+          Connect with the artist and explore custom artworks tailored to your vision.
+        </p>
+        <div class="download__btn">
+          <form action="https://formsubmit.co/shubhmehta2006@gmail.com" method="POST">
+            <label for="name"><i class="ri-user-3-line"></i> Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+
+            <label for="email"><i class="ri-mail-line"></i> Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@email.com">
+
+            <label for="message"><i class="ri-message-3-line"></i> Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+
+            <button type="submit" class="btn"><i class="ri-send-plane-2-line"></i> Send</button>
+            <input type="hidden" name="__captcha" value="false">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="#" class="logo">
+            <img src="logo.png" alt="logo" />
+            <span>Artsyycart</span>
+          </a>
+        </div>
+        <p class="section__description">
+          Explore the world of art with Sneha Gajera, where creativity meets passion.<br>
+          Contact No: <a href="tel:+917977280521">+91 7977280521</a><br>
+          Email: <a href="mailto:shubhmehta74.srm@gmail.com">shubhmehta74</a>
+        </p>
+        <a href="assets/artsiyycart.vcf" download class="btn" style="margin-top:1em;display:inline-block;">
+          <i class="ri-contacts-book-2-line"></i> Download vCard
+        </a>
+        <ul class="footer__socials">
+          <li>
+            <a href="https://www.instagram.com/artsyycart__" target="_blank"><i class="ri-instagram-fill"></i></a>
+          </li>
+          <li>
+            <a href="#" target="_blank"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="https://in.pinterest.com/snehadiaryyy/" target="_blank"><i class="ri-pinterest-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>About</h4>
+        <ul class="footer__links">
+          <li><a href="#menu">About Us</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="#">Why ArtsyyCart?</a></li>
+          <li><a href="https://www.instagram.com/coderking__1" target="_blank">Partner With Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="https://www.instagram.com/shubh_2006__?igsh=MWN5Z3NqMnY5cm9seQ==" target="_blank">Developer</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul class="footer__links">
+          <li><a href="https://www.instagram.com/artsyycart__" target="_blank">Account</a></li>
+          <li><a href="#contact">Support Center</a></li>
+          <li><a href="#contact">Feedback</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2024 Sneha Gajera. All rights reserved.<br>
+      <a href="https://www.instagram.com/shubh_2006__?igsh=MWN5Z3NqMnY5cm9seQ==" target="_blank">Developer</a> <b>SHUBH MEHTA</b>| CONTACT NO: <a href="tel:+917977788566">+91 7977788566</a> | <a href="mailto:shubhmehta74.srm@gmail.com">ShubhMehta</a>
+    </div>
+  </footer>
+
+  <div id="lightboxModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+    <div style="position:relative; max-width:90vw; max-height:90vh;">
+      <img id="lightboxImg" src="" alt="" style="max-width:100%; max-height:80vh; border-radius:12px;">
+      <div id="lightboxCaption" style="color:#fff; margin-top:1rem; text-align:center;"></div>
+      <button onclick="closeLightbox()" style="position:absolute;top:10px;right:10px;font-size:2rem;background:none;border:none;color:#fff;cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+  <script>
+    // Add to global scope
+    function openLightbox(img, title, desc) {
+      document.getElementById('lightboxImg').src = img;
+      document.getElementById('lightboxImg').alt = title;
+      document.getElementById('lightboxCaption').innerHTML = `<strong>${title}</strong><br>${desc}`;
+      document.getElementById('lightboxModal').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').style.display = 'none';
+    }
+  </script>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>
+  
+</body>
+</html>
