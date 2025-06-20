@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const shareText = encodeURIComponent(`${art.title} - ${window.origin}/${art.image}`);
 
       item.innerHTML = `
-        <div class="gallery-img-wrap" onclick="openLightbox && openLightbox('${art.image}', '${art.title}', '${art.description}')">
+        <div class="gallery-img-wrap">
           <img loading="lazy" src="${art.image}" alt="${art.title}" />
         </div>
         <h3>${art.title}</h3>
@@ -39,10 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="gallery-share">
           <a href="https://api.whatsapp.com/send?text=${shareText}" target="_blank" title="Share on WhatsApp"><i class="ri-whatsapp-line"></i></a>
           <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" title="Share on Facebook"><i class="ri-facebook-fill"></i></a>
-          <a href="#" onclick="navigator.clipboard.writeText('${window.location.origin}/${art.image}');alert('Link copied! Open Instagram and paste in your story.');return false;" title="Copy link for Instagram Story"><i class="ri-instagram-line"></i></a>
+          <button class="story-btn" type="button" title="Create Instagram Story"><i class="ri-instagram-line"></i></button>
         </div>
       `;
       galleryContainer.appendChild(item);
+
+      const storyBtn = item.querySelector('.story-btn');
+      storyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        createStoryTemplate(art.image, art.title, art.description);
+      });
+
+      const imgWrap = item.querySelector('.gallery-img-wrap');
+      imgWrap.addEventListener('click', () => {
+        if (typeof openLightbox === "function") openLightbox(art.image, art.title, art.description);
+      });
     });
     animateOnScroll();
   }
@@ -53,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!filterBar) return;
     const categories = Array.from(new Set(artworks.map(a => a.category || "Other")));
     // Set the default category (e.g., "POPART")
-    let defaultCategory = "POPART";
+    let defaultCategory = "FLYER";
     if (!categories.includes(defaultCategory)) defaultCategory = categories[0];
     filterBar.innerHTML = categories.map(cat =>
       `<button class="filter-btn${cat === defaultCategory ? ' active' : ''}" data-category="${cat}">${cat}</button>`
@@ -169,48 +181,154 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function createStoryTemplate(imgUrl, title, desc) {
-    const canvas = document.createElement('canvas');
-    canvas.width = 1080;
-    canvas.height = 1920;
-    const ctx = canvas.getContext('2d');
+function createStoryTemplate(imgUrl, title, desc, backgroundChoice = 1) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1920;
+  const ctx = canvas.getContext("2d");
 
-    // Draw background
-    ctx.fillStyle = "#e0c3fc";
+  const background = new Image();
+  background.src =
+    backgroundChoice === 2
+      ? "./WhatsApp Image 2025-06-20 at 10.54.17 PM.jpeg"
+      : "./WhatsApp Image 2025-06-20 at 10.54.17 PM (1).jpeg";
+
+  background.onload = () => {
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+    // Soft overlay for contrast
+    ctx.fillStyle = "rgba(0, 0, 0, 0.35)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw main image
-    const img = new window.Image();
-    img.crossOrigin = "anonymous";
-    img.onload = function() {
-      // Draw image centered
-      const imgW = 900, imgH = 900;
-      ctx.drawImage(img, (canvas.width-imgW)/2, 220, imgW, imgH);
+    drawElements();
+  };
 
-      // Draw title
-      ctx.font = "bold 64px Montserrat, Arial";
-      ctx.fillStyle = "#b16cea";
-      ctx.textAlign = "center";
-      ctx.fillText(title, canvas.width/2, 1200);
-
-      // Draw description
-      ctx.font = "36px Montserrat, Arial";
-      ctx.fillStyle = "#3d246c";
-      wrapText(ctx, desc, canvas.width/2, 1280, 900, 48);
-
-      // Download
-      const url = canvas.toDataURL("image/png");
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = "artsyycart-story.png";
-      a.click();
-
-      alert("Story template downloaded! Open Instagram, add to your story, and select this image from your gallery.");
-    };
-    img.src = imgUrl;
+  function drawElements() {
+  // Decorative floating circles
+  for (let i = 0; i < 15; i++) {
+    ctx.beginPath();
+    ctx.arc(Math.random() * 1080, Math.random() * 1920, 20 + Math.random() * 30, 0, 2 * Math.PI);
+    ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.05 + 0.03})`;
+    ctx.fill();
   }
 
-  // Helper for wrapping text
+  // Rounded rectangle for image
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  // Draw white card base behind image (optional)
+  ctx.save();
+  ctx.globalAlpha = 0.9;
+  ctx.fillStyle = "#ffffff";
+  roundRect(ctx, 90, 220, 900, 900, 60);
+  ctx.fill();
+  ctx.restore();
+
+  // Draw main image
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = function () {
+    ctx.save();
+    roundRect(ctx, 90, 220, 900, 900, 60);
+    ctx.clip();
+    ctx.drawImage(img, 90, 220, 900, 900);
+    ctx.restore();
+
+    // Dashed border
+    ctx.save();
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#f39c12";
+    ctx.setLineDash([28, 18]);
+    roundRect(ctx, 90, 220, 900, 900, 60);
+    ctx.stroke();
+    ctx.restore();
+
+    // Title
+    ctx.font = "bold 78px Montserrat, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.textAlign = "center";
+    ctx.shadowColor = "#000";
+    ctx.shadowBlur = 16;
+    ctx.fillText("CLASSES", canvas.width / 2, 1240);
+    ctx.font = "bold 48px Montserrat, sans-serif";
+    ctx.fillText("DRAWING CLASSES", canvas.width / 2, 1290);
+    ctx.shadowBlur = 0;
+
+    // Website
+    ctx.font = "bold 36px Montserrat, sans-serif";
+    ctx.fillStyle = "#00ffff";
+    ctx.fillText("🌐 Visit: https://shubh74.github.io/Artsyycart/", canvas.width / 2, 1360);
+
+    // Instagram
+    ctx.font = "bold 38px Montserrat, sans-serif";
+    ctx.fillStyle = "#f1c40f";
+    ctx.fillText("📸 @artsyycart__   |   @shubh_2006__", canvas.width / 2, 1420);
+
+    // Tag Bubble
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(880, 1700, 90, 0, 2 * Math.PI);
+    ctx.fillStyle = "linear-gradient(to right, #8e44ad, #3498db)";
+    ctx.fillStyle = "#8e44ad";
+    ctx.fill();
+    ctx.fillStyle = "#fff";
+    ctx.font = "bold 34px Montserrat, sans-serif";
+    ctx.fillText("Tag Us!", 880, 1705);
+    ctx.restore();
+
+    // Share text
+    ctx.font = "bold 52px Montserrat, sans-serif";
+    ctx.fillStyle = "#ffffff";
+    ctx.shadowColor = "#f39c12";
+    ctx.shadowBlur = 12;
+    ctx.fillText("✨ Share & Tag to Get Featured!", canvas.width / 2, 1860);
+    ctx.shadowBlur = 0;
+
+    // Download
+    const url = canvas.toDataURL("image/png");
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "artsyycart-story.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    alert("Template saved. Add to your story & tag @artsyycart__ and @shubh_2006__ 🎨");
+  };
+  img.src = imgUrl;
+}
+
+
+  function wrapText(context, text, x, y, maxWidth, lineHeight) {
+    const words = text.split(" ");
+    let line = "";
+    for (let n = 0; n < words.length; n++) {
+      const testLine = line + words[n] + " ";
+      const testWidth = context.measureText(testLine).width;
+      if (testWidth > maxWidth && n > 0) {
+        context.fillText(line, x, y);
+        line = words[n] + " ";
+        y += lineHeight;
+      } else {
+        line = testLine;
+      }
+    }
+    context.fillText(line, x, y);
+  }
+}
+
+  // Helper for wrapping text (keep this in your main.js)
   function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
     const words = text.split(' ');
     let line = '';
