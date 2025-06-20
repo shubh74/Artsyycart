@@ -17,10 +17,7 @@
   <meta property="og:image" content="images/ART39.jpeg">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
-   <meta name="description" content="Artsyycart - Explore the world of art with Sneha Gajera. View the gallery, biography, and contact for custom paintings and creative artworks." />
-  <meta name="keywords" content="Sneha Gajera, Artsyycart, artist portfolio, art gallery, painting, custom art, artwork, handmade painting, digital art" />
-  <meta name="author" content="Sneha Gajera" />
-  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
   <meta name="theme-color" content="#b16cea" />
   <meta name="description" content="Shubh Mehta - Web Developer and Digital Artist. Follow me on Instagram and explore my creative work online.">
 
@@ -63,7 +60,8 @@
 <!-- Branding & Keywords -->
 <meta name="application-name" content="Shubh Mehta Portfolio and Projects">
 <meta name="keywords" content="Shubh Mehta, Web Developer, Artsyycart, Portfolio, Projects, Instagram, HTML, CSS, JavaScript, Artist, Creative Work">
-
+<meta name="theme-color" content="#b16cea" />
+<meta name="google-site-verification" content="rvCKe8G3imeB3udRqCRdciJI40VVLGIjLLkUDAgqbRw" />
 <!-- Instagram Profile Info -->
 <meta property="og:site_name" content="Shubh Mehta - Developer & Creator">
 <meta property="og:url" content="https://www.instagram.com/shubh_2006__/" />
@@ -86,7 +84,6 @@
 }
 </script>
 
-
 </head>
 <body>
   <header>
@@ -96,7 +93,7 @@
           <img src="logo.png" alt="Artsyycart Logo" />
           <span class="logo-text">Artsyycart</span>
         </a>
-        <button class="nav__menu__btn" id="menu-btn" aria-label="Open menu">
+        <button class="nav__menu__btn" aria-label="Open menu">
           <span class="hamburger">
             <span></span>
             <span></span>
@@ -157,29 +154,29 @@
     <div class="clearfix"></div>
   </section>
 
-  <section class="section__container client__container" id="menu" data-aos="fade-up">
-    <div class="BIO__image">
-      <img src="profile.jpeg" alt="client" />
-    </div>
-    <div class="client__content">
-      <p class="section__subheader">ARTIST</p>
-      <h2 class="section__header">SNEHA GAJERA</h2>
+  <section class="section__container client__container bio-section" id="menu" data-aos="fade-up">
+    <div class="bio__content">
+      <p class="section__subheader">ABOUT THE ARTIST</p>
+      <h2 class="section__header">Sneha Gajera</h2>
       <p class="section__description">
-        Sneha Gajera is a passionate artist and art educator, known for her vibrant imagination and dedication to creative growth. Having conducted multiple drawing classes for aspiring artists, she loves to share her knowledge and inspire others. Her works blend technique with emotion, transforming blank canvases into stories that resonate with all ages. Dive into her world of color, creativity, and endless possibilities.
+        <b>Sneha Gajera</b> is a passionate, inspiring, and highly skilled artist and educator. She has dedicated her life to nurturing creativity in others, teaching hundreds of students across all ages and backgrounds. Her classes are known for their warmth, encouragement, and hands-on approach, making art accessible and joyful for everyone.
       </p>
-      <div class="client__details">
-        <div>
-          <h4>Shubh Mehta</h4>
-          <h5>Developer</h5>
-        </div>
+      <ul class="bio__list">
+        <li>2+ years of experience teaching art</li>
+        <li>Specializes in Pop Art, Resin Art, Quilling, and Sketching</li>
+        <li>Conducts engaging workshops and personalized classes</li>
+        <li>Encourages creativity, confidence, and self-expression</li>
+        <li>Her students describe her as <b>motivating, patient, and truly inspiring</b></li>
+      </ul>
+      <div class="bio__compliment">
+        <i class="ri-double-quotes-l"></i>
+        <em>
+          “Sneha doesn’t just teach art—she helps you to discover your own creative voice. Her passion and positivity make every class a joy!”
+        </em>
+        <i class="ri-double-quotes-r"></i>
       </div>
-      <div class="client__rating">
-        <span><i class="ri-star-fill"></i></span>
-        <span><i class="ri-star-fill"></i></span>
-        <span><i class="ri-star-fill"></i></span>
-        <span><i class="ri-star-fill"></i></span>
-        <span><i class="ri-star-line"></i></span>
-        <span>4.8</span>
+      <div class="bio__developer">
+        <span>Section designed & developed by  &nbsp<b>Shubh Mehta</b></span>
       </div>
     </div>
   </section>
@@ -213,6 +210,10 @@
       </div>
     </div>
   </section>
+  <section class="section__container" id="events" data-aos="fade-up">
+  <h2 class="section__header" style="text-align:center;">Upcoming Workshops & Events</h2>
+  <div id="events-list" style="max-width:600px;margin:2em auto 0 auto;text-align:center;"></div>
+</section>
 
   <footer>
     <div class="section__container footer__container">
@@ -310,32 +311,31 @@
       e.preventDefault();
     });
   </script>
-  <head>
-  ...
-  <meta name="theme-color" content="#b16cea" />
-  <meta name="google-site-verification" content="rvCKe8G3imeB3udRqCRdciJI40VVLGIjLLkUDAgqbRw" />
-
-  <!-- JSON-LD structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shubh Mehta",
-    "url": "https://shubh74.github.io/",
-    "sameAs": [
-      "https://www.instagram.com/shubh_2006__/",
-      "https://www.instagram.com/official_shubh_mehta/",
-      "https://www.instagram.com/coderking__1/",
-      "https://shubh74.github.io/Artsyycart/"
-    ],
-    "jobTitle": "Creative Web Developer",
-    "description": "Shubh Mehta is a multi-talented developer and digital artist creating interactive portfolios, art galleries, and custom web experiences. Follow his journey through code, design, and creativity."
+  <script>
+  // Easily edit this array to add/remove events
+  const events = [
+    // Example:
+    {
+    title: "Drawing Classes ",
+    date: "Starting soon",
+    location: "Dahisar, Mumbai",
+    link: "https://wa.me/917977280521"
+    }
+  ];
+  const eventsList = document.getElementById('events-list');
+ if (events.length === 0) {
+  eventsList.innerHTML = `<div class="no-events">No upcoming events or workshops at the moment.<br>Stay tuned!</div>`;
+} else {
+    eventsList.innerHTML = events.map(ev => `
+      <div class="event-card">
+        <h3>${ev.title}</h3>
+        <p><b>Date:</b> ${ev.date}</p>
+        <p><b>Location:</b> ${ev.location}</p>
+        ${ev.link ? `<a href="${ev.link}" class="btn" target="_blank">Register</a>` : ""}
+      </div>
+    `).join('');
   }
-  </script>
-
-  <!-- Favicon and other tags -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-</head>
-
+</script>
+  
 </body>
 </html>
